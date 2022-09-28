@@ -1,7 +1,7 @@
-# RayTracer
+# Ray Casting Mesh
 
 A CUDA Mesh RayTracer with BVH acceleration.
-Copy from [here](https://github.com/ashawkey/raytracing), add face_id of mesh output.
+Copy from [here](https://github.com/ashawkey/raytracing), add face_id of mesh as output.
 
 
 ### Install
@@ -37,4 +37,4 @@ intersections, face_normals, depth, face_ids = RT.trace(rays_o, rays_d) # [N, 3]
 ### Acknowledgement
 
 * Credits to [Thomas Müller](https://tom94.net/)'s amazing [tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn) and [instant-ngp](https://github.com/NVlabs/instant-ngp)!
-* Credits to [ashawkey](https://github.com/ashawkey/raytracing)
+* Credits to [ashawkey](https://github.com/ashawkey/raytracing)!
