@@ -1,13 +1,13 @@
 # RayTracer
 
 A CUDA Mesh RayTracer with BVH acceleration.
-Repository for from [here](https://github.com/ashawkey/raytracing), add face_id of mesh output.
+Copy from [here](https://github.com/ashawkey/raytracing), add face_id of mesh output.
 
 
 ### Install
 
 ```python
-git clone https://github.com/ashawkey/raytracing
+git clone https://github.com/Gorilla-Lab-SCUT/raycastmesh
 cd raycastmesh
 pip install .
 ```
@@ -25,13 +25,13 @@ import raycastmesh
 
 # build BVH from mesh
 mesh = trimesh.load('example.ply')
-RT = raytracing.RayTracer(mesh.vertices, mesh.faces) # build with numpy.ndarray
+RT = raycastmesh.RayTracer(mesh.vertices, mesh.faces) # build with numpy.ndarray
 
 # get rays
 rays_o, rays_d = get_ray(pose, intrinsics, H, W) # [N, 3], [N, 3], query with torch.Tensor (on cuda)
 
 # query ray-mesh intersection
-intersections, face_normals, depth = RT.trace(rays_o, rays_d) # [N, 3], [N, 3], [N,]
+intersections, face_normals, depth, face_ids = RT.trace(rays_o, rays_d) # [N, 3], [N, 3], [N,], [N,]
 ```
 
 ### Acknowledgement
