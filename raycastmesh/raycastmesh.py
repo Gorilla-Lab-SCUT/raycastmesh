@@ -52,5 +52,6 @@ class RayTracer():
         positions = positions.view(*prefix, 3)
         face_normals = face_normals.view(*prefix, 3)
         depth = depth.view(*prefix)
+        face_id = face_id.view(*prefix)
 
         return positions, face_normals, depth, face_id
